@@ -1,0 +1,9 @@
+<section class="section">
+  <h2 class="section-title">cocktails</h2>
+  <div class="cocktails-center">
+    <app-cocktail
+      *ngFor="let cocktail of cocktails$ | async"
+      [cocktail]="cocktail"
+    ></app-cocktail>
+  </div>
+</section>
