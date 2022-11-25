@@ -31,10 +31,10 @@ export class CocktailService {
     );
   }
 
-  getCocktails() {
+  getCocktails(): Observable<SingleCocktail[]> {
     return this.cocktails$.asObservable();
   }
-  setCocktails(query: string) {
+  setCocktails(query: string): void {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`;
     this.fetchCocktails(url).subscribe((value) => this.cocktails$.next(value));
   }
